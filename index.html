@@ -208,18 +208,38 @@ header {
 }
 	  
 @media (max-width: 768px) {
-  header {
-    height: 150px; /* Réduit la hauteur pour mobile */
+  .header-container {
+    flex-direction: row; /* Conserve l'alignement en ligne */
+    justify-content: flex-start; /* Alignement à gauche */
+    padding: 1rem;
   }
-  
-  .logo-img {
-    height: 100px; /* Ajustez la taille du logo pour mobile */
-    top: 0; /* Supprime le décalage */
+
+  .logo {
+    flex-direction: row; /* Logo et texte en ligne */
+    align-items: center;
   }
-  
+
+  .logo-text {
+    margin-left: 0.5rem; /* Espace entre le logo et le texte */
+  }
+
   .logo-tagline {
-    top: 30px;
-    margin-top: 0.5rem;
+    top: 0; /* Réinitialise le positionnement */
+    margin-top: 0;
+    margin-left: 0.5rem; /* Espace après le logo principal */
+  }
+
+  .logo-img {
+    height: 80px; /* Taille réduite pour mobile */
+    top: 0; /* Réinitialise le décalage */
+  }
+
+  /* Ajustement du bouton mobile */
+  .mobile-menu-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 	  
