@@ -206,7 +206,22 @@ header {
     padding: 1rem 1.5rem; /* Ajustez si nécessaire */
   }
 }
+	  
+@media (max-width: 768px) {
+  header {
+    height: 100px; /* Réduit la hauteur pour mobile */
+  }
   
+  .logo-img {
+    height: 100px; /* Ajustez la taille du logo pour mobile */
+    top: 0; /* Supprime le décalage */
+  }
+  
+  .logo-tagline {
+    top: 0; /* Supprime le décalage */
+  }
+}
+	  
   .nav-links.active {
     right: 0;
 	
