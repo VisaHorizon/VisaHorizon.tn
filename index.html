@@ -178,10 +178,12 @@ header {
 
 @media (max-width: 768px) {
   .mobile-menu-btn {
-    top: 60px; /* Ajusté de 40px à 60px pour descendre le bouton */
-    right: 20px;
+    display: block;
+    position: absolute; /* Ajouté */
+    top: 40px; /* Ajustez cette valeur selon la hauteur de votre header */
+    right: 20px; /* Positionné à droite */
+    z-index: 1001;
   }
-}
   
   .nav-links {
     position: fixed;
