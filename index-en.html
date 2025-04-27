@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VisaHorizon | Étudier à l'étranger</title>
+  <title>VisaHorizon | Study abroad</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Fichier CSS de base -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Surcharges pour la version anglaise -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
   <header id="header">
     <div class="header-container">
-      <a href="index.html" class="logo">
+      <a href="index-en.html" class="logo">
         <img src="Logo.png" alt="VisaHorizon Logo" class="logo-img">
         <div class="logo-text">
           <span class="logo-main"></span>
@@ -30,15 +33,15 @@
       </button>
       
       <nav class="nav-links">
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="destinations.html" class="nav-link">Destinations</a>
-        <a href="process.html" class="nav-link">Processus</a>
-        <a href="testimonials.html" class="nav-link">Témoignages</a>
-        <a href="contact.html" class="contact-btn">Contact</a>
+        <a href="services-en.html" class="nav-link">Services</a>
+        <a href="destinations-en.html" class="nav-link">Destinations</a>
+        <a href="process-en.html" class="nav-link">Process</a>
+        <a href="testimonials-en.html" class="nav-link">Testimonials</a>
+        <a href="contact-en.html" class="contact-btn">Contact</a>
         <div class="language-selector">
           <button class="language-btn">
-            <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="language-flag">
-            <span>FR</span>
+            <img src="https://flagcdn.com/w20/gb.png" alt="English" class="language-flag">
+            <span>EN</span>
             <i class="fas fa-chevron-down"></i>
           </button>
           <div class="language-dropdown">
@@ -56,29 +59,30 @@
     </div>
   </header>
 
+  <!-- Le reste de votre HTML reste inchangé -->
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1 class="hero-title">Votre passeport pour l'excellence académique</h1>
-        <p class="hero-subtitle">Notre expertise en visas étudiants pour l'Italie, Malte et l'Europe transforme vos rêves en réalité. Un accompagnement sur mesure pour votre réussite internationale.</p>
-        <a href="contact.html" class="main-btn">
-          <span>Démarrer mon projet</span>
+        <h1 class="hero-title">Your Passport to Academic Excellence</h1>
+        <p class="hero-subtitle">Our expertise in student visas for Italy, Malta and Europe turns your dreams into reality. Tailored support for your international success.</p>
+        <a href="#contact" class="main-btn">
+          <span>Start My Project</span>
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Étudier à l'étranger" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Studying abroad" class="hero-img">
         <div class="hero-img-overlay"></div>
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="services">
+  <section id="services" class="services">
     <div class="section-title">
-      <h2>Notre Approche Exclusive</h2>
-      <p>Une méthodologie éprouvée pour maximiser vos chances de succès</p>
+      <h2>Our Exclusive Approach</h2>
+      <p>A proven methodology to maximize your chances of success</p>
     </div>
     
     <div class="services-grid">
@@ -86,10 +90,10 @@
         <div class="service-icon">
           <i class="fas fa-passport"></i>
         </div>
-        <h3>Visas Garantis</h3>
-        <p>Notre taux de réussite de 98% sur les visas étudiants grâce à une préparation minutieuse de chaque dossier.</p>
-        <a href="services.html#visas" class="service-link">
-          <span>En savoir plus</span>
+        <h3>Guaranteed Visas</h3>
+        <p>Our 98% success rate for student visas comes from meticulous preparation of each application.</p>
+        <a href="#" class="service-link">
+          <span>Learn more</span>
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -98,10 +102,10 @@
         <div class="service-icon">
           <i class="fas fa-university"></i>
         </div>
-        <h3>Partenariats Premium</h3>
-        <p>Accès exclusif aux meilleures institutions en Italie, Malte et dans toute l'Europe avec des avantages négociés.</p>
-        <a href="services.html#partenariats" class="service-link">
-          <span>En savoir plus</span>
+        <h3>Premium Partnerships</h3>
+        <p>Exclusive access to top institutions in Italy, Malta and across Europe with negotiated benefits.</p>
+        <a href="#" class="service-link">
+          <span>Learn more</span>
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -110,10 +114,10 @@
         <div class="service-icon">
           <i class="fas fa-headset"></i>
         </div>
-        <h3>Support 360°</h3>
-        <p>Un conseiller dédié vous accompagne de la préparation du dossier jusqu'à votre installation.</p>
-        <a href="services.html#support" class="service-link">
-          <span>En savoir plus</span>
+        <h3>360° Support</h3>
+        <p>A dedicated advisor guides you from application preparation to your settlement abroad.</p>
+        <a href="#" class="service-link">
+          <span>Learn more</span>
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -124,8 +128,8 @@
   <section id="contact" class="contact">
     <div class="contact-container">
       <div class="contact-info">
-        <h2 class="contact-title">Prêt à transformer votre avenir ?</h2>
-        <p class="contact-text">Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous accompagner à chaque étape.</p>
+        <h2 class="contact-title">Ready to transform your future?</h2>
+        <p class="contact-text">Our team of experts is available to answer all your questions and guide you step by step.</p>
         
         <div class="contact-details">
           <div class="contact-item">
@@ -143,7 +147,7 @@
               <i class="fas fa-phone-alt"></i>
             </div>
             <div class="contact-item-content">
-              <h4>Téléphone</h4>
+              <h4>Phone</h4>
               <a href="tel:+21693312388">+216 93 312 388</a>
             </div>
           </div>
@@ -153,25 +157,25 @@
               <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="contact-item-content">
-              <h4>Bureau</h4>
-              <p>Monastir, Tunisie - Consultations en ligne disponibles</p>
+              <h4>Office</h4>
+              <p>Monastir, Tunisia - Online consultations available</p>
             </div>
           </div>
         </div>
         
         <a href="https://wa.me/21693312388" class="main-btn">
-          <span>Chat WhatsApp</span>
+          <span>WhatsApp Chat</span>
           <i class="fab fa-whatsapp"></i>
         </a>
       </div>
       
       <div class="contact-form">
-        <h3>Envoyez-nous un message</h3>
+        <h3>Send us a message</h3>
         <form id="contactForm" action="https://formspree.io/f/mqaqkonw" method="POST">
             <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
             
             <div class="form-group">
-                <label for="name" class="form-label">Nom complet</label>
+                <label for="name" class="form-label">Full Name</label>
                 <input type="text" id="name" name="name" class="form-input" required>
             </div>
             
@@ -181,17 +185,17 @@
             </div>
             
             <div class="form-group">
-                <label for="phone" class="form-label">Téléphone</label>
+                <label for="phone" class="form-label">Phone</label>
                 <input type="tel" id="phone" name="phone" class="form-input">
             </div>
             
             <div class="form-group">
-                <label for="message" class="form-label">Votre projet</label>
+                <label for="message" class="form-label">Your Project</label>
                 <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
             </div>
             
             <button type="submit" class="submit-btn">
-                <span>Envoyer la demande</span>
+                <span>Send Request</span>
                 <i class="fas fa-paper-plane"></i>
             </button>
             
@@ -206,13 +210,13 @@
     <div class="footer-container">
       <div class="footer-logo">
         <img src="Logo.png" alt="VisaHorizon" class="footer-logo-img">
-        <p class="footer-text">Experts en visas étudiants pour l'Italie, Malte et l'Europe. Nous transformons les rêves académiques en réalités.</p>
+        <p class="footer-text">Student visa experts for Italy, Malta and Europe. We turn academic dreams into realities.</p>
         <div class="footer-social">
-          <a href="https://www.facebook.com/VisaHorizon.tn/" class="social-link" aria-label="Facebook">
+          <a href="#" class="social-link" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
             <span class="social-tooltip">Facebook</span>
           </a>
-          <a href="https://www.instagram.com/visahorizon.tn/" class="social-link" aria-label="Instagram">
+          <a href="#" class="social-link" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
             <span class="social-tooltip">Instagram</span>
           </a>
@@ -224,42 +228,42 @@
       </div>
       
       <div class="footer-links">
-        <h3>Liens rapides</h3>
+        <h3>Quick Links</h3>
         <ul class="footer-nav">
-          <li><a href="services.html">Nos services</a></li>
-          <li><a href="destinations.html">Destinations</a></li>
-          <li><a href="process.html">Processus</a></li>
-          <li><a href="testimonials.html">Témoignages</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services-en.html">Our Services</a></li>
+          <li><a href="destinations-en.html">Destinations</a></li>
+          <li><a href="process-en.html">Process</a></li>
+          <li><a href="testimonials-en.html">Testimonials</a></li>
+          <li><a href="contact-en.html">Contact</a></li>
         </ul>
       </div>
       
       <div class="footer-links">
         <h3>Destinations</h3>
         <ul class="footer-nav">
-          <li><a href="destinations.html#italie">Italie</a></li>
-          <li><a href="destinations.html#malte">Malte</a></li>
-          <li><a href="destinations.html#france">France</a></li>
-          <li><a href="destinations.html#allemagne">Allemagne</a></li>
-          <li><a href="destinations.html#canada">Canada</a></li>
+          <li><a href="destinations-en.html#italie">Italy</a></li>
+          <li><a href="destinations-en.html#malte">Malta</a></li>
+          <li><a href="destinations-en.html#france">France</a></li>
+          <li><a href="destinations-en.html#allemagne">Germany</a></li>
+          <li><a href="destinations-en.html#canada">Canada</a></li>
         </ul>
       </div>
       
       <div class="footer-newsletter">
         <h3>Newsletter</h3>
-        <p>Abonnez-vous pour recevoir nos conseils et offres exclusives.</p>
+        <p>Subscribe to receive our exclusive tips and offers.</p>
         <form id="newsletterForm" class="newsletter-form">
-          <input type="email" placeholder="Votre email" class="newsletter-input" required>
-          <button type="submit" class="newsletter-btn">S'abonner</button>
+          <input type="email" placeholder="Your email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
         </form>
         <div id="newsletterMessage" class="newsletter-message">
-          Désolé, la newsletter est temporairement désactivée. Revenez bientôt !
+          Sorry, the newsletter is temporarily disabled. Please check back soon!
         </div>
       </div>
     </div>
     
     <div class="footer-bottom">
-      <p class="copyright">© 2025 VisaHorizon. Tous droits réservés.</p>
+      <p class="copyright">© 2025 VisaHorizon. All rights reserved.</p>
     </div>
   </footer>
 
@@ -313,13 +317,13 @@
       
       // Animation du bouton
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Envoi...';
+      submitBtn.textContent = 'Sending...';
       
       // Afficher le message après un court délai (simulation)
       setTimeout(() => {
         messageBox.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'S\'abonner';
+        submitBtn.textContent = 'Subscribe';
         
         // Reset le formulaire
         this.reset();
@@ -343,7 +347,7 @@
         
         // État de chargement
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>Envoi en cours...</span><i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
         alertBox.style.display = 'none';
         
         try {
@@ -356,14 +360,14 @@
             });
             
             if (response.ok) {
-                alertBox.innerHTML = 'Merci ! Votre message a été envoyé avec succès.';
+                alertBox.innerHTML = 'Thank you! Your message has been sent successfully.';
                 alertBox.className = 'form-alert success';
                 form.reset();
             } else {
-                throw new Error('Erreur lors de l\'envoi');
+                throw new Error('Error while sending');
             }
         } catch (error) {
-            alertBox.innerHTML = 'Une erreur s\'est produite. Veuillez réessayer ou nous contacter directement.';
+            alertBox.innerHTML = 'An error occurred. Please try again or contact us directly.';
             alertBox.className = 'form-alert error';
         } finally {
             submitBtn.disabled = false;
@@ -376,8 +380,8 @@
             }, 5000);
         }
     });
-	
-	// Menu mobile
+
+    // Menu mobile
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
