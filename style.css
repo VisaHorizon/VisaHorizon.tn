@@ -7,8 +7,8 @@
       --secondary-dark: #00A89B;
       --dark: #050A1A;
       --light: #FFFFFF; /* Changé en blanc pur */
-      --text: #333333; /* Texte plus foncé pour contraste sur fond blanc */
-      --text-light: #666666; /* Pour texte secondaire */
+      --text: #000000; /* Texte plus foncé pour contraste sur fond blanc */
+      --text-light: #b39999; /* Pour texte secondaire */
       --bg-color: #FFFFFF; /* Nouvelle variable pour fond blanc */
       --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       --section-spacing: 8rem;
