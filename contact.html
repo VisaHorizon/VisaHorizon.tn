@@ -270,23 +270,8 @@
       </nav>
     </div>
   </header>
-<!-- Header -->
-<header id="header">
-  <div class="header-container">
-    <!-- Bouton Menu Mobile - À AJOUTER -->
-    <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    
-    <a href="index.html" class="logo">
-      [...]
-    </a>
-    [...]
-  </div>
-</header>
-	   <!-- Menu Mobile -->
+  
+   <!-- Menu Mobile -->
       <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -831,28 +816,7 @@ document.getElementById('newsletterForm').addEventListener('submit', function(e)
     message.style.display = 'none';
   }, 3000);
 });
-
-// Menu mobile
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-if (mobileMenuBtn && navLinks) {
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-  });
-
-  // Fermer le menu quand on clique sur un lien
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenuBtn.classList.remove('active');
-      navLinks.classList.remove('active');
-      document.body.classList.remove('no-scroll');
-    });
-  });
-}
-	  
+	
   </script>
 </body>
 </html>
