@@ -104,10 +104,6 @@ header {
       transform: scaleX(1);
     }
 
-  :root {
-    --primary: #0F1A3D; /* Bleu marine */
-    --primary-light: #1A2B5F; /* Bleu marine clair pour les effets */
-}
 
 .logo-img {
     height: 135px;
@@ -558,7 +554,7 @@ header {
       margin-bottom: 2.5rem;
       opacity: 0.9;
       max-width: 600px;
-      color: var(--text-light); /* Texte gris clair */
+      color: var(--text); /* Texte gris clair */
     }
 
     .hero-image {
@@ -784,7 +780,7 @@ header {
       max-width: 700px;
       margin: 0 auto;
       font-size: 1.15rem;
-      color: var(--text-light);
+      color: var(--text);
     }
 
     .services-grid {
@@ -862,7 +858,7 @@ header {
     }
 
     .service-card p {
-      color: var(--text-light);
+      color: var(--text);
       margin-bottom: 1.5rem;
     }
 

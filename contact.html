@@ -815,8 +815,20 @@ document.getElementById('newsletterForm').addEventListener('submit', function(e)
   setTimeout(() => {
     message.style.display = 'none';
   }, 3000);
+  });
+
+modeButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const selectedMode = btn.dataset.mode;
+    // Rediriger vers une autre page avec le mode en paramètre GET
+    window.location.href = `demande.html?mode=${selectedMode}`;
+  
+
+    // Scroller directement vers l'objet de la demande
+    document.getElementById('step1').scrollIntoView({ behavior: 'smooth' });
+
+  });
 });
-	
   </script>
 </body>
 </html>

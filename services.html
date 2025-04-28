@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisaHorizon | Nos Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+      :root {
+      --primary: #0F1A3D;
+      --primary-light: #1A2B5F;
+      --accent: #FF5E5B;
+      --accent-dark: #E04A47;
+      --secondary: #00C1B3;
+      --secondary-dark: #00A89B;
+      --dark: #050A1A;
+      --light: #F7F9FC;
+      --text: #E2E6F1;
+      --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      --section-spacing: 8rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: 'Archivo', sans-serif;
+      color: var(--text);
+      background-color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    /* Design du curseur personnalisé */
+    body {
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FF5E5B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle></svg>"), auto;
+    }
+
+    a, button {
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23FF5E5B' stroke='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle></svg>"), pointer;
+    }
+
+    /* Header - Design géométrique */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(5, 10, 26, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 94, 91, 0.2);
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      padding: 0.5rem 0;
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .logo:hover::before {
+      transform: scaleX(1);
+    }
+
+    .logo-img {
+       height: 120px;
+      margin-right: 1rem;
+      filter: drop-shadow(0 0 8px rgba(0, 255, 240, 1));
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-main {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--light);
+      background: linear-gradient(90deg, var(--light), #AAB6D9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-tagline {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--secondary);
+      margin-top: 0.2rem;
+    }
+
+    /* Navigation */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      padding: 0.5rem 0;
+      opacity: 0.9;
+      transition: var(--transition);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .nav-link:hover {
+      color: var(--light);
+      opacity: 1;
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+	
+	  /* Sélecteur de langue */
+    .language-selector {
+      position: relative;
+      margin-left: 1rem;
+    }
+
+    .language-btn {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .language-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .language-btn i {
+      transition: var(--transition);
+    }
+
+    .language-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: var(--primary-light);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      padding: 0.5rem 0;
+      min-width: 120px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 1000;
+    }
+
+    .language-selector:hover .language-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .language-option {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .language-option:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--accent);
+    }
+
+    .language-flag {
+      width: 20px;
+      height: 15px;
+      margin-right: 0.5rem;
+      object-fit: cover;
+    }
+
+    /* Bouton de contact */
+    .contact-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: var(--light);
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 0;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+      box-shadow: 0 5px 15px rgba(255, 94, 91, 0.3);
+    }
+
+    .contact-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 94, 91, 0.5);
+    }
+
+    .contact-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Hero Section - Design asymétrique */
+    .hero {
+      height: 100vh;
+      min-height: 800px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: -10%;
+      width: 40%;
+      height: 120%;
+      background: var(--accent);
+      clip-path: circle(50% at 50% 50%);
+      opacity: 0.1;
+      z-index: -2;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-text {
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100px;
+      height: 5px;
+      background: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      max-width: 600px;
+    }
+
+    .hero-image {
+      position: relative;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+      filter: grayscale(20%) contrast(110%) brightness(90%);
+      transition: var(--transition);
+    }
+
+    .hero-img:hover {
+      filter: grayscale(0%) contrast(100%) brightness(100%);
+    }
+
+    .hero-img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(15, 26, 61, 0.3), rgba(26, 43, 95, 0.7));
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+
+    /* Bouton principal - Design unique */
+    .main-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 2.5rem;
+      background: transparent;
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 2px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      z-index: 1;
+    }
+
+    .main-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      z-index: -1;
+      transform: translateX(-100%);
+      transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .main-btn:hover {
+      color: var(--light);
+      letter-spacing: 3px;
+    }
+
+    .main-btn:hover::before {
+      transform: translateX(0);
+    }
+
+    .main-btn i {
+      transition: var(--transition);
+    }
+
+    .main-btn:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Section Services - Design en grille asymétrique */
+    .services {
+      padding: var(--section-spacing) 2rem;
+      background-color: var(--dark);
+      position: relative;
+    }
+
+    .services::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23050A1A" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23050A1A" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23050A1A"/></svg>') no-repeat;
+      background-size: cover;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--light);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: var(--text);
+      opacity: 0.8;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 94, 91, 0.1);
+      padding: 2.5rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card:hover::before {
+      height: 100%;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      transform: rotate(15deg) scale(1.1);
+      color: var(--accent);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--light);
+      position: relative;
+      display: inline-block;
+    }
+
+    .service-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .service-card:hover h3::after {
+      width: 60px;
+      background: var(--accent);
+    }
+
+    .service-card p {
+      color: var(--text);
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-link {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .service-link i {
+      transition: var(--transition);
+    }
+
+    .service-link:hover {
+      color: var(--accent);
+    }
+
+    .service-link:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Section Process */
+    .process {
+      padding: var(--section-spacing) 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      position: relative;
+    }
+
+    .process::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%230F1A3D" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%230F1A3D" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%230F1A3D"/></svg>') no-repeat;
+      background-size: cover;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      counter-reset: step-counter;
+    }
+
+    .process-step {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .process-step::before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      position: absolute;
+      top: -25px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Chakra Petch', sans-serif;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .process-step h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--light);
+      padding-top: 1rem;
+    }
+
+    .process-step p {
+      opacity: 0.9;
+    }
+
+    /* Section Contact - Design géométrique contrasté */
+    .contact {
+      padding: var(--section-spacing) 2rem;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23050A1A" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23050A1A" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23050A1A"/></svg>') no-repeat;
+      background-size: cover;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact-info {
+      position: relative;
+    }
+
+    .contact-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+      color: var(--light);
+    }
+
+    .contact-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+    }
+
+    .contact-text {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+
+    .contact-item:hover .contact-icon {
+      background: var(--accent);
+      color: var(--light);
+      transform: rotate(15deg);
+    }
+
+    .contact-item-content h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: var(--light);
+    }
+
+    .contact-item-content p, 
+    .contact-item-content a {
+      color: var(--text);
+      opacity: 0.9;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-item-content a:hover {
+      color: var(--accent);
+    }
+
+    /* Formulaire de contact - Design futuriste */
+    .contact-form {
+      background: rgba(5, 10, 26, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 3rem;
+      border-radius: 0;
+      border: 1px solid rgba(255, 94, 91, 0.2);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    }
+
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent), var(--secondary));
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--light);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--light);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: var(--light);
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: var(--transition);
+      clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .submit-btn:hover {
+      letter-spacing: 2px;
+    }
+
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Footer - Design minimaliste contrasté */
+    footer {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 4rem 2rem 2rem;
+      position: relative;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-logo-img {
+      height: 50px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 5px rgba(0, 193, 179, 0.5));
+    }
+
+    .footer-text {
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light);
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .footer-links h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--light);
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-links h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .footer-nav {
+      list-style: none;
+    }
+
+    .footer-nav li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-nav a {
+      color: var(--text);
+      text-decoration: none;
+      transition: var(--transition);
+      opacity: 0.8;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent);
+      opacity: 1;
+      padding-left: 5px;
+    }
+
+    .footer-newsletter p {
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--light);
+      font-family: inherit;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .newsletter-btn {
+      background: var(--accent);
+      color: var(--light);
+      border: none;
+      padding: 0 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-btn:hover {
+      background: var(--accent-dark);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 3rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .hero::before {
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+        opacity: 0.8;
+      }
+
+      .hero-image {
+        height: 400px;
+        grid-row: 1;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero-content {
+        padding: 0 1.5rem;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .services, .contact, .process {
+        padding: 5rem 1.5rem;
+      }
+
+      .contact-form {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 600px;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .main-btn {
+        padding: 1rem 2rem;
+        font-size: 0.9rem;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .newsletter-btn {
+        padding: 0.8rem;
+      }
+    }
+	
+	/* Style spécifique pour le select "Service intéressé" */
+#service {
+    color: var(--accent); /* Texte en rouge (couleur d'accent) */
+    background-color: var(--primary-light); /* Fond bleu foncé */
+    border: 1px solid var(--accent); /* Bordure rouge */
+}
+
+/* Style des options du menu déroulant */
+#service option {
+    background-color: var(--primary); /* Fond bleu plus foncé */
+    color: var(--text); /* Texte blanc/clair */
+}
+
+/* Style au survol des options */
+#service option:hover {
+    background-color: var(--accent) !important; /* Fond rouge au survol */
+    color: white !important; /* Texte blanc */
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="Logo.png" alt="VisaHorizon Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-main"></span>
+          <span class="logo-tagline">Beyond Borders</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+	  <a href="index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link">Services</a>
+        <a href="destinations.html" class="nav-link">Destinations</a>
+        <a href="process.html" class="nav-link">Processus</a>
+        <a href="testimonials.html" class="nav-link">Témoignages</a>
+        <a href="contact.html" class="contact-btn">Contact</a>
+		        <div class="language-selector">
+          <button class="language-btn">
+            <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="language-flag">
+            <span>FR</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="language-dropdown">
+            <a href="services-en.html" class="language-option">
+              <img src="https://flagcdn.com/w20/gb.png" alt="English" class="language-flag">
+              <span>EN</span>
+            </a>
+            <a href="services.html" class="language-option">
+              <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="language-flag">
+              <span>FR</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+    
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Nos Services Premium</h1>
+        <p class="hero-subtitle">Un accompagnement complet pour maximiser vos chances d'obtention de visa étudiant.</p>
+        <a href="#contact" class="main-btn">
+          <span>Demander un devis</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Étudier à l'étranger" class="hero-img">
+        <div class="hero-img-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="section-title">
+      <h2>Services Visa</h2>
+      <p>Nos Services Complets - De la préparation du dossier à votre installation à l'étranger</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <h3>Évaluation Initiale</h3>
+        <p>Analyse approfondie de votre profil et recommandations personnalisées pour maximiser vos chances.</p>
+        <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+          <li>Analyse de vos diplômes</li>
+          <li>Évaluation linguistique</li>
+          <li>Recommandations de programmes</li>
+        </ul>
+        <a href="#contact" class="service-link">
+          <span>Évaluer mon profil</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-folder-open"></i>
+        </div>
+        <h3>Préparation de Dossier</h3>
+        <p>Assistance complète pour la constitution d'un dossier solide et convaincant.</p>
+        <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+          <li>Traduction certifiée</li>
+          <li>Lettres de motivation</li>
+          <li>Préparation aux entretiens</li>
+        </ul>
+        <a href="#contact" class="service-link">
+          <span>Optimiser mon dossier</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-university"></i>
+        </div>
+        <h3>Admission Universitaire</h3>
+        <p>Accès à nos partenariats exclusifs avec les meilleures institutions.</p>
+        <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+          <li>Frais réduits</li>
+          <li>Procédures accélérées</li>
+          <li>Bourses exclusives</li>
+        </ul>
+        <a href="#contact" class="service-link">
+          <span>Trouver mon université</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-home"></i>
+        </div>
+        <h3>Installation</h3>
+        <p>Nous vous accompagnons pour votre installation en toute sérénité.</p>
+        <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+          <li>Recherche de logement</li>
+          <li>Ouverture de compte bancaire</li>
+          <li>Assurance santé</li>
+        </ul>
+        <a href="#contact" class="service-link">
+          <span>Préparer mon arrivée</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="process">
+    <div class="section-title">
+      <h2>Notre Processus en 4 Étapes</h2>
+      <p>Une méthodologie claire et transparente pour votre sérénité</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="process-step">
+        <h3>Consultation Initiale</h3>
+        <p>Évaluation gratuite de votre profil et définition de votre projet.</p>
+      </div>
+      
+      <div class="process-step">
+        <h3>Préparation du Dossier</h3>
+        <p>Collecte et optimisation de tous les documents nécessaires.</p>
+      </div>
+      
+      <div class="process-step">
+        <h3>Dépôt et Suivi</h3>
+        <p>Gestion complète de votre demande avec mise à jour régulière.</p>
+      </div>
+      
+      <div class="process-step">
+        <h3>Pré-Départ</h3>
+        <p>Préparation à votre nouvelle vie étudiante à l'étranger.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2 class="contact-title">Prêt à commencer votre projet ?</h2>
+        <p class="contact-text">Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions et vous guider pas à pas dans votre démarche.</p>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-item-content">
+              <h4>Email</h4>
+              <a href="mailto:contact@visahorizon.tn">contact@visahorizon.tn</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-item-content">
+              <h4>Téléphone</h4>
+              <a href="tel:+21693312388">+216 93 312 388</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-item-content">
+              <h4>Bureau</h4>
+              <p>Monastir, Tunisie - Consultations en ligne disponibles</p>
+            </div>
+          </div>
+        </div>
+        
+        <a href="https://wa.me/21693312388" class="main-btn">
+          <span>Chat WhatsApp</span>
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      
+      <form 
+  id="contactForm"
+  action="https://formspree.io/f/mqaqkonw" 
+  method="POST"
+>
+          <div class="form-group">
+            <label for="name" class="form-label">Nom complet</label>
+            <input type="text" id="name" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone" class="form-label">Téléphone</label>
+            <input type="tel" id="phone" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="service" class="form-label">Service intéressé</label>
+            <select id="service" class="form-input" required>
+              <option value="">Sélectionnez un service</option>
+              <option value="evaluation">Évaluation Initiale</option>
+              <option value="dossier">Préparation de Dossier</option>
+              <option value="admission">Admission Universitaire</option>
+              <option value="installation">Installation</option>
+              <option value="complet">Package Complet</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Votre message</label>
+            <textarea id="message" class="form-input form-textarea" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Envoyer la demande</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="Logo.png" alt="VisaHorizon" class="footer-logo-img">
+        <p class="footer-text">Experts en visas étudiants pour l'Italie, Malte et l'Europe. Nous transformons les rêves académiques en réalités.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Liens rapides</h3>
+        <ul class="footer-nav">
+          <li><a href="#services">Nos services</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#process">Processus</a></li>
+          <li><a href="#testimonials">Témoignages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Destinations</h3>
+        <ul class="footer-nav">
+          <li><a href="#">Italie</a></li>
+          <li><a href="#">Malte</a></li>
+          <li><a href="#">France</a></li>
+          <li><a href="#">Allemagne</a></li>
+          <li><a href="#">Canada</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-newsletter">
+        <h3>Newsletter</h3>
+        <p>Abonnez-vous pour recevoir nos conseils et offres exclusives.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Votre email" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">S'abonner</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 VisaHorizon. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+  
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const button = form.querySelector('button[type="submit"]');
+    const originalText = button.innerHTML;
+
+    // Animation pendant l'envoi
+    button.disabled = true;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('Message envoyé avec succès !');
+        form.reset();
+      } else {
+        throw new Error('Erreur réseau');
+      }
+    })
+    .catch(error => {
+      alert('Erreur : ' + error.message);
+    })
+    .finally(() => {
+      button.disabled = false;
+      button.innerHTML = originalText;
+    });
+  });
+  
+    // Animation au scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // Animation des éléments
+      const elements = document.querySelectorAll('.service-card, .contact-item, .contact-form, .process-step');
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.style.animation = 'fadeIn 0.8s forwards';
+        }
+      });
+    });
+
+    // Smooth scrolling pour les liens d'ancrage
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Effet de survol dynamique
+    document.querySelectorAll('.service-card, .contact-item').forEach(item => {
+      item.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        this.style.setProperty('--mouse-x', `${x}px`);
+        this.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  </script>
+</body>
+</html>
