@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VisaHorizon | Nouvelle Demande</title>
+  <link rel="stylesheet" href="style-demande.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Header -->
+<header id="header">
+  <div class="header-container">
+    <a href="index.html" class="logo">
+      <img src="Logo.png" alt="VisaHorizon Logo" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-main">VisaHorizon</span>
+        <span class="logo-tagline">Beyond Borders</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="contact.html" class="contact-btn">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero section -->
+<section class="contact-hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">Quel est l'objet de votre demande ?</h1>
+      <p class="hero-subtitle">Sélectionnez le type de service dont vous avez besoin</p>
+    </div>
+  </div>
+</section>
+
+<!-- Navigation entre formulaires -->
+<div class="form-navigation">
+  <button class="form-nav-btn active" data-form="rdv">Prise de RDV</button>
+  <button class="form-nav-btn" data-form="visa">Message standard</button>
+  <button class="form-nav-btn" data-form="urgence">Urgence</button>
+</div>
+
+<!-- Section Formulaire RDV -->
+<section id="rdv-form" class="contact-section active-form">
+  <div class="contact-container">
+    <div class="contact-form-wrapper">
+      <form id="rdvForm" action="https://formspree.io/f/mqaqkonw" method="POST" class="contact-form">
+        <h2 class="form-title">Prendre un rendez-vous</h2>
+        
+        <div class="form-group floating-label">
+          <input type="text" id="rdv-name" name="name" class="form-input" placeholder=" " required>
+          <label for="rdv-name" class="form-label">Nom complet</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <input type="email" id="rdv-email" name="email" class="form-input" placeholder=" " required>
+          <label for="rdv-email" class="form-label">Adresse email</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <input type="tel" id="rdv-phone" name="phone" class="form-input" placeholder=" " required>
+          <label for="rdv-phone" class="form-label">Téléphone</label>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group floating-label form-col">
+            <input type="date" id="rdv-date" name="appointment_date" class="form-input" placeholder=" " required>
+            <label for="rdv-date" class="form-label">Date souhaitée</label>
+          </div>
+          
+          <div class="form-group floating-label form-col">
+            <input type="time" id="rdv-time" name="appointment_time" class="form-input" placeholder=" " required>
+            <label for="rdv-time" class="form-label">Heure souhaitée</label>
+          </div>
+        </div>
+
+        <div class="form-group floating-label">
+          <select id="rdv-type" name="appointment_type" class="form-input" required>
+            <option value=""></option>
+            <option value="video">Visio-conférence</option>
+            <option value="bureau">En agence</option>
+          </select>
+          <label for="rdv-type" class="form-label">Type de rendez-vous</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <select id="rdv-service" name="service" class="form-input" required>
+            <option value=""></option>
+            <option value="consultation">Consultation initiale</option>
+            <option value="dossier">Préparation de dossier</option>
+            <option value="suivi">Suivi de demande</option>
+          </select>
+          <label for="rdv-service" class="form-label">Service demandé</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <textarea id="rdv-message" name="message" class="form-input form-textarea" placeholder=" "></textarea>
+          <label for="rdv-message" class="form-label">Informations complémentaires</label>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="far fa-calendar-check"></i> Confirmer le RDV
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Section Formulaire Standard (Message standard) -->
+<section id="visa-form" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-form-wrapper">
+      <form id="standardForm" action="https://formspree.io/f/mqaqkonw" method="POST" class="contact-form">
+        <h2 class="form-title">Dites-nous tout !</h2>
+
+        <div class="form-group floating-label">
+          <input type="text" id="standard-name" name="name" class="form-input" placeholder=" " required>
+          <label for="standard-name" class="form-label">Nom complet</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <input type="email" id="standard-email" name="email" class="form-input" placeholder=" " required>
+          <label for="standard-email" class="form-label">Adresse email</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <input type="tel" id="standard-phone" name="phone" class="form-input" placeholder=" " required>
+          <label for="standard-phone" class="form-label">Téléphone</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <textarea id="standard-message" name="message" class="form-input form-textarea" placeholder=" " required></textarea>
+          <label for="standard-message" class="form-label">Votre message</label>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Envoyer le message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Section Formulaire Urgence -->
+<section id="urgence-form" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-form-wrapper urgent-wrapper">
+      <form id="urgenceForm" action="https://formspree.io/f/mqaqkonw" method="POST" class="contact-form">
+        <h2 class="form-title"><i class="fas fa-exclamation-triangle"></i> Demande urgente</h2>
+        
+        <div class="form-group floating-label">
+          <input type="text" id="urgence-name" name="name" class="form-input" placeholder=" " required>
+          <label for="urgence-name" class="form-label">Nom complet</label>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group floating-label form-col">
+            <input type="email" id="urgence-email" name="email" class="form-input" placeholder=" " required>
+            <label for="urgence-email" class="form-label">Adresse email</label>
+          </div>
+          
+          <div class="form-group floating-label form-col">
+            <input type="tel" id="urgence-phone" name="phone" class="form-input" placeholder=" " required>
+            <label for="urgence-phone" class="form-label">Téléphone</label>
+          </div>
+        </div>
+
+        <div class="form-group floating-label">
+          <select id="urgence-level" name="urgency" class="form-input" required>
+            <option value=""></option>
+            <option value="normal">Normal (réponse sous 48h)</option>
+            <option value="eleve">Élevé (réponse sous 24h)</option>
+            <option value="critique">Critique (réponse immédiate)</option>
+          </select>
+          <label for="urgence-level" class="form-label">Niveau d'urgence</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <input type="text" id="urgence-subject" name="subject" class="form-input" placeholder=" " required>
+          <label for="urgence-subject" class="form-label">Objet de la demande</label>
+        </div>
+
+        <div class="form-group floating-label">
+          <textarea id="urgence-message" name="message" class="form-input form-textarea" placeholder=" " required></textarea>
+          <label for="urgence-message" class="form-label">Décrivez votre urgence</label>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="callback" required>
+            <span>Je suis disponible pour un rappel immédiat</span>
+          </label>
+        </div>
+
+        <button type="submit" class="submit-btn urgent-btn">
+          <i class="fas fa-bolt"></i> Envoyer la demande urgente
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="Logo.png" alt="VisaHorizon Logo" class="footer-logo-img">
+      <p class="footer-text">Experts en visas étudiants pour l'Italie, Malte et l'Europe. Nous transformons vos rêves académiques en réalité.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 VisaHorizon. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const mode = urlParams.get('mode') || 'rdv'; // Default to rdv if no mode given
+
+  const formNavBtns = document.querySelectorAll('.form-nav-btn');
+  const forms = document.querySelectorAll('.contact-section');
+
+  function activateForm(formId) {
+    // Enlève l'activation de tous les boutons et formulaires
+    formNavBtns.forEach(b => b.classList.remove('active'));
+    forms.forEach(f => f.classList.remove('active-form'));
+
+    // Active le bon bouton et formulaire
+    const btn = document.querySelector(`.form-nav-btn[data-form="${formId}"]`);
+    const form = document.getElementById(`${formId}-form`);
+    if (btn && form) {
+      btn.classList.add('active');
+      form.classList.add('active-form');
+    }
+  }
+
+  // Première activation au chargement
+  activateForm(mode);
+
+  // Ajoute les événements sur les boutons de navigation
+  formNavBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const formId = this.getAttribute('data-form');
+      activateForm(formId);
+
+      // Met à jour l'URL sans recharger
+      history.pushState(null, null, `?mode=${formId}`);
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>
