@@ -1134,3 +1134,21 @@ footer {
   overflow: hidden;
   height: 100%;
 }
+
+@media (max-width: 768px) {
+  .language-selector {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .language-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .language-dropdown {
+    width: 100%;
+    right: auto;
+    left: 0;
+  }
+}
