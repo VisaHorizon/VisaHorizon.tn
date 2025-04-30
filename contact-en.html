@@ -802,6 +802,38 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+// Hamburger menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+  }
+
+  // Hide current page link
+  const currentPath = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.style.opacity = '0.5';
+      link.style.pointerEvents = 'none';
+    }
+  });
+});
+
   </script>
 </body>
 </html>
