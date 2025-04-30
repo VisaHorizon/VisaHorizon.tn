@@ -1086,7 +1086,7 @@ footer {
   .mobile-menu-btn {
     display: block;
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: 20px;
     z-index: 1001;
   }
