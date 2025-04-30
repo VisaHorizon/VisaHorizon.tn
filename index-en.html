@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisaHorizon | Study Abroad</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<header id="header"></header>
+
+
+<!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Your Passport to Academic Excellence</h1>
+        <p class="hero-subtitle">Our expertise in student visas for Italy, Malta and Europe turns your dreams into reality. Tailored support for your international success.</p>
+        <a href="contact-en.html" class="main-btn">
+          <span>Start My Project</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Studying abroad" class="hero-img">
+        <div class="hero-img-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="section-title">
+      <h2>Our Exclusive Approach</h2>
+      <p>A proven methodology to maximize your chances of success</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-passport"></i>
+        </div>
+        <h3>Guaranteed Visas</h3>
+        <p>Our 98% success rate for student visas comes from meticulous preparation of each application.</p>
+        <a href="services-en.html#visas" class="service-link">
+          <span>Learn more</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-university"></i>
+        </div>
+        <h3>Premium Partnerships</h3>
+        <p>Exclusive access to top institutions in Italy, Malta and across Europe with negotiated benefits.</p>
+        <a href="services-en.html#partnerships" class="service-link">
+          <span>Learn more</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3>360° Support</h3>
+        <p>A dedicated advisor guides you from application preparation through to your relocation.</p>
+        <a href="services-en.html#support" class="service-link">
+          <span>Learn more</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2 class="contact-title">Ready to transform your future?</h2>
+        <p class="contact-text">Our team of experts is available to answer all your questions and guide you every step of the way.</p>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-item-content">
+              <h4>Email</h4>
+              <a href="mailto:contact@visahorizon.tn">contact@visahorizon.tn</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-item-content">
+              <h4>Phone</h4>
+              <a href="tel:+21693312388">+216 93 312 388</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-item-content">
+              <h4>Office</h4>
+              <p>Monastir, Tunisia - Online consultations available</p>
+            </div>
+          </div>
+        </div>
+        
+        <a href="https://wa.me/21693312388" class="main-btn">
+          <span>WhatsApp Chat</span>
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Send us a message</h3>
+        <form id="contactForm" action="https://formspree.io/f/mqaqkonw" method="POST">
+            <input type="hidden" name="_language" value="en">
+            <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
+            
+            <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" id="phone" name="phone" class="form-input">
+            </div>
+            
+            <div class="form-group">
+                <label for="message" class="form-label">Your Project</label>
+                <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <span>Send Request</span>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+            
+            <div id="form-alert" class="form-alert"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-en-placeholder"></div>
+
+<script>
+  fetch('footer-en.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-en-placeholder').innerHTML = data;
+
+      // Une fois le HTML du footer injecté, on peut exécuter le JS lié à la newsletter
+      const form = document.getElementById('newsletterForm');
+      if (form) {
+        const message = document.getElementById('newsletterMessage');
+        message.style.display = 'none';
+
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          message.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            message.style.display = 'none';
+          }, 5000);
+        });
+      }
+    });
+</script>
+
+ <script src="script.js"></script>
+</body>
+</html>
