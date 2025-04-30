@@ -1660,7 +1660,7 @@ footer {
   /* تعديل موقع زر القائمة */
   .mobile-menu-btn {
     position: absolute;
-    top: 40px;
+    top: 80px;
     right: 20px;
     z-index: 1001;
   }
