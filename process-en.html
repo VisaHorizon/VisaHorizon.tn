@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisaHorizon | Our Process</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<div id="header-en"></div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">Your Simplified Process</h1>
+      <p class="hero-subtitle">At VisaHorizon, we transform complex steps into a clear, supported journey toward your international success.</p>
+      <a href="contact.html" class="main-btn">Start my project <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-image">
+        <img src="images/process.jpg" alt="Studying abroad" class="hero-img">
+        <div class="hero-img-overlay"></div>
+      </div>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="process">
+  <div class="section-title">
+    <h2>Key Steps to Your Success</h2>
+    <p>Our proven methodology guides you through every stage of your study abroad project</p>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <h3>Initial Contact</h3>
+      <p>We discuss to understand your project, ambitions, and specific needs.</p>
+    </div>
+
+    <div class="process-step">
+      <h3>Profile Analysis</h3>
+      <p>Personalized assessment of your academic and professional background to maximize your chances.</p>
+    </div>
+
+    <div class="process-step">
+      <h3>Program Selection</h3>
+      <p>Choosing the best courses and institutions suited to your project and budget.</p>
+    </div>
+
+    <div class="process-step">
+      <h3>Application Preparation</h3>
+      <p>Assistance with compiling all your academic and administrative documents.</p>
+    </div>
+
+    <div class="process-step">
+      <h3>Application Submission</h3>
+      <p>We provide rigorous follow-up for each application until your file is accepted.</p>
+    </div>
+
+    <div class="process-step">
+      <h3>Visa Assistance</h3>
+      <p>Comprehensive support for your student visa application and preparation for your relocation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose VisaHorizon -->
+<section class="services" style="background-color: var(--light);">
+  <div class="section-title">
+    <h2>Why Choose VisaHorizon?</h2>
+    <p>Our expertise makes the difference at every stage of your journey</p>
+  </div>
+<div style="text-align: center; margin-top: 3rem;">
+  <div class="features-grid">
+    <div class="feature-card">
+      <i class="fas fa-rocket feature-icon"></i>
+      <h4>Speed</h4>
+      <p>Optimized timelines to quickly realize your study abroad project.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fas fa-user-shield feature-icon"></i>
+      <h4>Expertise</h4>
+      <p>A team of specialists in international student mobility with 10 years of experience.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fas fa-hands-helping feature-icon"></i>
+      <h4>Support</h4>
+      <p>Personalized follow-up at every step until your settlement in the destination country.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fas fa-award feature-icon"></i>
+      <h4>Reliability</h4>
+      <p>Over 98% success rate on processed visa applications.</p>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="contact.html" class="main-btn">Get started now <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- Footer -->
+  <div id="footer-en-placeholder"></div>
+
+<script>
+  fetch('footer-en.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-en-placeholder').innerHTML = data;
+
+      // Once the footer HTML is injected, we can execute the newsletter-related JS
+      const form = document.getElementById('newsletterForm');
+      if (form) {
+        const message = document.getElementById('newsletterMessage');
+        message.style.display = 'none';
+
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          message.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            message.style.display = 'none';
+          }, 5000);
+        });
+      }
+    });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

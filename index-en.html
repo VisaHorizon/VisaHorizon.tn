@@ -3,70 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VisaHorizon | Study abroad</title>
+  <title>VisaHorizon | Study Abroad</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
-  <!-- Fichier CSS de base -->
   <link rel="stylesheet" href="style.css">
-  <!-- Surcharges pour la version anglaise -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/path-to/favicon.png">
 </head>
 <body>
-  <!-- Header -->
-  <header id="header">
-    <div class="header-container">
-      <a href="index-en.html" class="logo">
-        <img src="Logo.png" alt="VisaHorizon Logo" class="logo-img">
-        <div class="logo-text">
-          <span class="logo-main"></span>
-          <span class="logo-tagline">Beyond Borders</span>
-        </div>
-      </a>
-      
-      <!-- Menu Mobile -->
-      <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <nav class="nav-links">
-        <a href="services-en.html" class="nav-link">Services</a>
-        <a href="destinations-en.html" class="nav-link">Destinations</a>
-        <a href="process-en.html" class="nav-link">Process</a>
-        <a href="testimonials-en.html" class="nav-link">Testimonials</a>
-        <a href="contact-en.html" class="contact-btn">Contact</a>
-        <div class="language-selector">
-          <button class="language-btn">
-            <img src="https://flagcdn.com/w20/gb.png" alt="English" class="language-flag">
-            <span>EN</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="language-dropdown">
-            <a href="index-en.html" class="language-option">
-              <img src="https://flagcdn.com/w20/gb.png" alt="English" class="language-flag">
-              <span>EN</span>
-            </a>
-            <a href="index.html" class="language-option">
-              <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="language-flag">
-              <span>FR</span>
-            </a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+<header id="header-en"></header>
 
-  <!-- Le reste de votre HTML reste inchangé -->
-  <!-- Hero Section -->
+<!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
         <h1 class="hero-title">Your Passport to Academic Excellence</h1>
         <p class="hero-subtitle">Our expertise in student visas for Italy, Malta and Europe turns your dreams into reality. Tailored support for your international success.</p>
-        <a href="#contact" class="main-btn">
+        <a href="contact-en.html" class="main-btn">
           <span>Start My Project</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -79,7 +33,7 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="services">
+  <section class="services">
     <div class="section-title">
       <h2>Our Exclusive Approach</h2>
       <p>A proven methodology to maximize your chances of success</p>
@@ -92,7 +46,7 @@
         </div>
         <h3>Guaranteed Visas</h3>
         <p>Our 98% success rate for student visas comes from meticulous preparation of each application.</p>
-        <a href="#" class="service-link">
+        <a href="services-en.html#visas" class="service-link">
           <span>Learn more</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -104,7 +58,7 @@
         </div>
         <h3>Premium Partnerships</h3>
         <p>Exclusive access to top institutions in Italy, Malta and across Europe with negotiated benefits.</p>
-        <a href="#" class="service-link">
+        <a href="services-en.html#partnerships" class="service-link">
           <span>Learn more</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -115,8 +69,8 @@
           <i class="fas fa-headset"></i>
         </div>
         <h3>360° Support</h3>
-        <p>A dedicated advisor guides you from application preparation to your settlement abroad.</p>
-        <a href="#" class="service-link">
+        <p>A dedicated advisor guides you from application preparation through to your relocation.</p>
+        <a href="services-en.html#support" class="service-link">
           <span>Learn more</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -129,7 +83,7 @@
     <div class="contact-container">
       <div class="contact-info">
         <h2 class="contact-title">Ready to transform your future?</h2>
-        <p class="contact-text">Our team of experts is available to answer all your questions and guide you step by step.</p>
+        <p class="contact-text">Our team of experts is available to answer all your questions and guide you every step of the way.</p>
         
         <div class="contact-details">
           <div class="contact-item">
@@ -172,6 +126,7 @@
       <div class="contact-form">
         <h3>Send us a message</h3>
         <form id="contactForm" action="https://formspree.io/f/mqaqkonw" method="POST">
+            <input type="hidden" name="_language" value="en">
             <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
             
             <div class="form-group">
@@ -205,200 +160,32 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="Logo.png" alt="VisaHorizon" class="footer-logo-img">
-        <p class="footer-text">Student visa experts for Italy, Malta and Europe. We turn academic dreams into realities.</p>
-        <div class="footer-social">
-          <a href="#" class="social-link" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-            <span class="social-tooltip">Facebook</span>
-          </a>
-          <a href="#" class="social-link" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-            <span class="social-tooltip">Instagram</span>
-          </a>
-          <a href="https://www.linkedin.com/in/aymen-lamiri-9baaa926a/" class="social-link" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-            <span class="social-tooltip">LinkedIn</span>
-          </a>
-        </div>
-      </div>
-      
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul class="footer-nav">
-          <li><a href="services-en.html">Our Services</a></li>
-          <li><a href="destinations-en.html">Destinations</a></li>
-          <li><a href="process-en.html">Process</a></li>
-          <li><a href="testimonials-en.html">Testimonials</a></li>
-          <li><a href="contact-en.html">Contact</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-links">
-        <h3>Destinations</h3>
-        <ul class="footer-nav">
-          <li><a href="destinations-en.html#italie">Italy</a></li>
-          <li><a href="destinations-en.html#malte">Malta</a></li>
-          <li><a href="destinations-en.html#france">France</a></li>
-          <li><a href="destinations-en.html#allemagne">Germany</a></li>
-          <li><a href="destinations-en.html#canada">Canada</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-newsletter">
-        <h3>Newsletter</h3>
-        <p>Subscribe to receive our exclusive tips and offers.</p>
-        <form id="newsletterForm" class="newsletter-form">
-          <input type="email" placeholder="Your email" class="newsletter-input" required>
-          <button type="submit" class="newsletter-btn">Subscribe</button>
-        </form>
-        <div id="newsletterMessage" class="newsletter-message">
-          Sorry, the newsletter is temporarily disabled. Please check back soon!
-        </div>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p class="copyright">© 2025 VisaHorizon. All rights reserved.</p>
-    </div>
-  </footer>
+  <div id="footer-en-placeholder"></div>
 
-  <script>
-    // Animation au scroll
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      
-      // Animation des éléments
-      const elements = document.querySelectorAll('.service-card, .contact-item, .contact-form');
-      elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.style.animation = 'fadeIn 0.8s forwards';
-        }
-      });
-    });
+<script>
+  fetch('footer-en.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-en-placeholder').innerHTML = data;
 
-    // Smooth scrolling pour les liens d'ancrage
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+      // Une fois le HTML du footer injecté, on peut exécuter le JS lié à la newsletter
+      const form = document.getElementById('newsletterForm');
+      if (form) {
+        const message = document.getElementById('newsletterMessage');
+        message.style.display = 'none';
+
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          message.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            message.style.display = 'none';
+          }, 5000);
         });
-      });
+      }
     });
+</script>
 
-    // Effet de survol dynamique
-    document.querySelectorAll('.service-card, .contact-item').forEach(item => {
-      item.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        this.style.setProperty('--mouse-x', `${x}px`);
-        this.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
-
-    // Gestion de la newsletter
-    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const messageBox = document.getElementById('newsletterMessage');
-      const submitBtn = this.querySelector('button[type="submit"]');
-      
-      // Animation du bouton
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      
-      // Afficher le message après un court délai (simulation)
-      setTimeout(() => {
-        messageBox.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Subscribe';
-        
-        // Reset le formulaire
-        this.reset();
-        
-        // Masquer le message après 5 secondes
-        setTimeout(() => {
-          messageBox.style.display = 'none';
-        }, 5000);
-      }, 1000);
-    });
-
-    // Gestion du formulaire de contact
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const alertBox = document.getElementById('form-alert');
-        
-        // Sauvegarder le texte original
-        const originalBtnContent = submitBtn.innerHTML;
-        
-        // État de chargement
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
-        alertBox.style.display = 'none';
-        
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                alertBox.innerHTML = 'Thank you! Your message has been sent successfully.';
-                alertBox.className = 'form-alert success';
-                form.reset();
-            } else {
-                throw new Error('Error while sending');
-            }
-        } catch (error) {
-            alertBox.innerHTML = 'An error occurred. Please try again or contact us directly.';
-            alertBox.className = 'form-alert error';
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnContent;
-            alertBox.style.display = 'block';
-            
-            // Masquer l'alerte après 5 secondes
-            setTimeout(() => {
-                alertBox.style.display = 'none';
-            }, 5000);
-        }
-    });
-
-    // Menu mobile
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenuBtn.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      document.body.classList.toggle('no-scroll');
-    });
-
-    // Fermer le menu quand on clique sur un lien
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuBtn.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-      });
-    });
-  </script>
+ <script src="script.js"></script>
 </body>
 </html>
