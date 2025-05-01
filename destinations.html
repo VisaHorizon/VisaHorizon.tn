@@ -937,6 +937,41 @@
       }
     }
   </style>
-
+<style>
+  /* Add this to your existing media queries */
+  @media (max-width: 768px) {
+    /* Adjust map point positions for mobile */
+    .map-point[href="#france"] {
+      top: 60% !important;
+      left: 20% !important;
+    }
+    
+    .map-point[href="#allemagne"] {
+      top: 50% !important;
+      left: 30% !important;
+    }
+    
+    .map-point[href="#italie"] {
+      top: 70% !important;
+      left: 35% !important;
+    }
+    
+    .map-point[href="#malte"] {
+      top: 85% !important;
+      left: 35% !important;
+    }
+    
+    /* Make map points larger for better touch targets */
+    .point-pulse {
+      width: 30px !important;
+      height: 30px !important;
+    }
+    
+    .point-label {
+      font-size: 0.8rem !important;
+      padding: 0.3rem 0.6rem !important;
+    }
+  }
+</style>
 </body>
 </html>
