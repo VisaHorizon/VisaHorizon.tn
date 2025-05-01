@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisaHorizon | Destinations d'Études</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header"></header>
+  
+    
+
+    <!-- Hero Section Spécifique aux Destinations -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Votre Destination d'Études en Europe</h1>
+        <p class="hero-subtitle">Découvrez nos destinations phares en Italie et à Malte, où l'excellence académique rencontre un cadre de vie exceptionnel.</p>
+        <a href="#italie" class="main-btn"style="1rem; background: var(--primary-light); border-color: var(--secondary);">
+          <span>Explorer l'Italie</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+       <a href="#malte" class="main-btn">
+  <span>Découvrir Malte</span>
+  <i class="fas fa-arrow-right"></i>
+</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Destinations d'études en Europe" class="hero-img">
+        <div class="hero-img-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Carte Interactive -->
+  <section class="services" style="padding-bottom: 0;">
+    <div class="section-title">
+      <h2>Nos Destinations Phares</h2>
+      <p>Des paysages époustouflants, des universités prestigieuses et une qualité de vie incomparable</p>
+    </div>
+
+    <div class="interactive-map" style="max-width: 1000px; margin: 0 auto 5rem; position: relative;">
+      <img src="images/Place.jpeg" alt="Carte Europe" style="width: 100%; border-radius: 8px; filter: grayscale(30%) contrast(110%) brightness(70%);">
+      
+      <!-- Points sur la carte -->
+      <a href="#italie" class="map-point" style="position: absolute; top: 55%; left: 60%; transform: translate(-50%, -50%);">
+        <div class="point-pulse"></div>
+        <div class="point-label">Italie</div>
+      </a>
+      
+      <a href="#malte" class="map-point" style="position: absolute; top: 75%; left: 65%; transform: translate(-50%, -50%);">
+        <div class="point-pulse"></div>
+        <div class="point-label">Malte</div>
+      </a>
+    </div>
+
+    <style>
+      .map-point {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        z-index: 10;
+      }
+      
+      .point-pulse {
+        width: 20px;
+        height: 20px;
+        background: var(--accent);
+        border-radius: 50%;
+        position: relative;
+        animation: pulse 2s infinite;
+      }
+      
+      .point-pulse::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: var(--accent);
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: pulse 2s infinite 0.3s;
+      }
+      
+      .point-label {
+        margin-top: 10px;
+        background: var(--primary-light);
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        color: var(--light);
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: var(--transition);
+      }
+      
+      .map-point:hover .point-label {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+      }
+    </style>
+  </section>
+
+  <!-- Section Italie -->
+  <section id="italie" class="destination-section" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); padding: var(--section-spacing) 2rem; position: relative; overflow: hidden; color: var(--light);">
+    <div class="destination-container" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+      <div class="destination-image" style="position: relative; height: 500px;">
+        <img src="images/Italy.png" alt="Étudier en Italie" style="width: 100%; height: 100%; object-fit: cover; clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);"></div>
+      </div>
+      
+      <div class="destination-content">
+    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+      <img src="https://flagcdn.com/w40/it.png" alt="Drapeau Italie" style="width: 40px; height: 30px; margin-right: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+      <h2 style="font-size: 2.5rem; color: var(--light);">Italie</h2>
+    </div>
+        
+        <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9; color: var(--light);">L'Italie, berceau de la Renaissance, allie patrimoine culturel inégalé et excellence académique. Nos universités partenaires offrent des formations reconnues mondialement dans des domaines variés.</p>
+        
+        <div class="destination-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+            <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">50+</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8; color: var(--light);">Universités partenaires</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+            <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">95%</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8; color: var(--light);">Taux de réussite visa</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+            <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">€0-4000</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8; color: var(--light);">Frais de scolarité annuels</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+            <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">20h/sem</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8; color: var(--light);">Travail étudiant autorisé</p>
+          </div>
+        </div>
+        
+        <a href="contact.html" class="main-btn">
+          <span>Postuler pour l'Italie</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    
+<!-- Section Universités Partenaires -->
+<div class="universities-section" style="max-width: 1400px; margin: 5rem auto 0; padding-top: 5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+  <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem; color: var(--light);">Nos Universités Partenaires en Italie</h3>
+
+  <div class="university-gallery" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; padding: 1rem;">
+    
+    <!-- Université 1 -->
+    <div class="university-card">
+      <div class="card-bg"></div>
+      <img src="images/universities/unibo.png" alt="University of Bologna">
+      <div class="university-info">
+        <h4>Université de Bologne</h4>
+        <p>Fondée en 1088,c'est la plus ancienne université du monde occidental,réputée pour son enseignement du droit et des sc humaines.</p>
+      </div>
+      <div class="card-border"></div>
+    </div>
+
+    <!-- Université 2 -->
+    <div class="university-card">
+      <div class="card-bg" style="background: linear-gradient(45deg, rgba(255,94,91,0.1) 0%, rgba(255,255,255,0.05) 100%);"></div>
+      <img src="images/universities/polimi.png" alt="Politecnico di Milano">
+      <div class="university-info">
+        <h4>Politecnico di Milano</h4>
+        <p>Établi en 1863, c'est l'une des principales universités techniques d'Europe, spécialisée en ingénierie, architecture et design.</p>
+      </div>
+      <div class="card-border"></div>
+    </div>
+
+    <!-- Université 3 -->
+    <div class="university-card">
+      <div class="card-bg" style="background: linear-gradient(45deg, rgba(100,115,255,0.1) 0%, rgba(255,255,255,0.05) 100%);"></div>
+      <img src="images/universities/sapienza.png" alt="Sapienza University">
+      <div class="university-info">
+        <h4>Sapienza Université de Rome</h4>
+        <p>Fondée en 1303 à Rome, c'est l'une des plus grandes universités d'Europe, offrant une large gamme de disciplines académiques.</p>
+      </div>
+      <div class="card-border"></div>
+    </div>
+
+    <!-- Université 4 -->
+    <div class="university-card">
+      <div class="card-bg" style="background: linear-gradient(45deg, rgba(255,176,57,0.1) 0%, rgba(255,255,255,0.05) 100%);"></div>
+      <img src="images/universities/unitorino.png" alt="University of Turin">
+      <div class="university-info">
+        <h4>Université de Turin</h4>
+        <p>Créée en 1404, elle est reconnue pour ses contributions en droit, économie et sciences sociales, avec un fort engagement en recherche.</p>
+      </div>
+      <div class="card-border"></div>
+    </div>
+
+    <!-- Université 5 -->
+    <div class="university-card">
+      <div class="card-bg" style="background: linear-gradient(45deg, rgba(76,217,100,0.1) 0%, rgba(255,255,255,0.05) 100%);"></div>
+      <img src="images/universities/unipd.png" alt="University of Padua">
+      <div class="university-info">
+        <h4>Université de Padoue</h4>
+        <p>Fondée en 1222, célèbre pour son engagement envers la liberté académique et ses avancées en médecine et en sciences naturelles.</p>
+      </div>
+      <div class="card-border"></div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* Card Styling */
+.university-card {
+  position: relative;
+  width: 220px;
+  height: 180px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.university-card img {
+  width: 80%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  filter: brightness(0.9);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+/* Background */
+.card-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0,193,179,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Info overlay */
+.university-info {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  z-index: 3;
+  border-radius: 12px;
+}
+
+.university-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #00C1B3; /* Couleur accentuée claire pour bonne visibilité */
+}
+
+
+/* Border */
+.card-border {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+/* Hover Effects */
+.university-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.university-card:hover .card-bg {
+  opacity: 1;
+}
+
+.university-card:hover img {
+  filter: brightness(1.1) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  transform: scale(1.1);
+}
+
+.university-card:hover .card-border {
+  border-color: rgba(255, 255, 255, 0.3);
+  animation: borderGlow 1.5s infinite alternate;
+}
+
+.university-card:hover .university-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Click effect */
+.university-card:active {
+  transform: translateY(0) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* Border glow animation */
+@keyframes borderGlow {
+  0% {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    border-color: var(--accent);
+    box-shadow: inset 0 0 15px var(--accent-light);
+  }
+}
+</style>
+
+
+
+
+    </div>
+  </section>
+
+  <!-- Section Malte -->
+  <section id="malte" class="destination-section" style="background: var(--primary-light); padding: var(--section-spacing) 2rem; position: relative; overflow: hidden; color: var(--light);">
+    <div class="destination-container" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+      <div class="destination-content">
+        <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+          <img src="https://flagcdn.com/w40/mt.png" alt="Drapeau Malte" style="width: 40px; height: 30px; margin-right: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+          <h2 style="font-size: 2.5rem; color: var(--light);">Malte</h2>
+        </div>
+        
+        <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">Malte, joyau de la Méditerranée, offre un environnement anglophone exceptionnel pour étudier avec des frais abordables et un climat ensoleillé toute l'année.</p>
+        
+        <div class="destination-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+            <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">100%</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Enseignement en anglais</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+            <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">€3000-8000</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Frais de scolarité annuels</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+            <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">300+</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Jours de soleil par an</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+            <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">98%</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Taux de réussite visa</p>
+          </div>
+        </div>
+        
+        <a href="contact.html" class="main-btn">
+          <span>Postuler pour Malte</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <div class="destination-image" style="position: relative; height: 500px; order: -1;">
+        <img src="images/Malte.jpg" 
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(5, 10, 26, 0.5), rgba(15, 26, 61, 0.7)); clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);"></div>
+      </div>
+    </div>
+    
+    <!-- Programmes populaires -->
+    <div class="programs-section" style="max-width: 1400px; margin: 5rem auto 0; padding-top: 5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+      <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem; color: var(--light);">Programmes Populaires à Malte</h3>
+      
+      <div class="programs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="program-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255, 94, 91, 0.1); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden;">
+          <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+            <div style="width: 50px; height: 50px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+              <i class="fas fa-laptop-code" style="color: var(--light); font-size: 1.2rem;"></i>
+            </div>
+            <h4 style="font-size: 1.3rem; color: var(--light);">Informatique & IT</h4>
+          </div>
+          <p style="margin-bottom: 1.5rem; opacity: 0.8;">Formations en cybersécurité, développement web et intelligence artificielle dans des écoles techniques réputées.</p>
+          <a href="#" style="color: var(--secondary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <span>Voir les programmes</span>
+            <i class="fas fa-arrow-right" style="transition: var(--transition);"></i>
+          </a>
+        </div>
+        
+        <div class="program-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255, 94, 91, 0.1); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden;">
+          <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+            <div style="width: 50px; height: 50px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+              <i class="fas fa-briefcase" style="color: var(--light); font-size: 1.2rem;"></i>
+            </div>
+            <h4 style="font-size: 1.3rem; color: var(--light);">Business International</h4>
+          </div>
+          <p style="margin-bottom: 1.5rem; opacity: 0.8;">MBA et programmes de gestion avec stages en entreprises internationales basées à Malte.</p>
+          <a href="#" style="color: var(--secondary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <span>Voir les programmes</span>
+            <i class="fas fa-arrow-right" style="transition: var(--transition);"></i>
+          </a>
+        </div>
+        
+        <div class="program-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255, 94, 91, 0.1); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden;">
+          <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+            <div style="width: 50px; height: 50px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+              <i class="fas fa-language" style="color: var(--light); font-size: 1.2rem;"></i>
+            </div>
+            <h4 style="font-size: 1.3rem; color: var(--light);">Anglais Intensif</h4>
+          </div>
+          <p style="margin-bottom: 1.5rem; opacity: 0.8;">Programmes d'anglais académique avec préparation aux examens IELTS/TOEFL et options de travail étudiant.</p>
+          <a href="#" style="color: var(--secondary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <span>Voir les programmes</span>
+            <i class="fas fa-arrow-right" style="transition: var(--transition);"></i>
+          </a>
+        </div>
+      </div>
+      
+      <style>
+        .program-card:hover {
+          transform: translateY(-10px);
+          background: rgba(255,255,255,0.05);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .program-card:hover a {
+          color: var(--accent);
+        }
+        
+        .program-card:hover i {
+          transform: translateX(5px);
+        }
+      </style>
+    </div>
+  </section>
+
+  <!-- Section Comparaison -->
+<section class="services" style="background: var(--primary-light);">
+  <div class="section-title" style="color: var(--light);">
+    <h2 style="color: var(--light);">Italie ou Malte : Quelle Destination Vous Correspond ?</h2>
+    <p style="color: var(--light); opacity: 0.9;">Un comparatif détaillé pour vous aider à choisir votre destination d'études idéale</p>
+  </div>
+    
+    <div class="comparison-table" style="max-width: 1000px; margin: 0 auto; background: rgba(5, 10, 26, 0.5); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background: rgba(255, 94, 91, 0.1);">
+            <th style="padding: 1.5rem; text-align: left; font-size: 1.1rem; color: var(--light); width: 30%;"></th>
+            <th style="padding: 1.5rem; text-align: center; font-size: 1.1rem; color: var(--light); width: 35%;">
+              <img src="https://flagcdn.com/w40/it.png" alt="Italie" style="height: 20px; margin-right: 0.5rem; vertical-align: middle;">
+              Italie
+            </th>
+            <th style="padding: 1.5rem; text-align: center; font-size: 1.1rem; color: var(--light); width: 35%;">
+              <img src="https://flagcdn.com/w40/mt.png" alt="Malte" style="height: 20px; margin-right: 0.5rem; vertical-align: middle;">
+              Malte
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td style="padding: 1.5rem; font-weight: 600; color: var(--light);">Langue d'enseignement</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">Italien (programmes en anglais disponibles)</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">Anglais à 100%</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td style="padding: 1.5rem; font-weight: 600; color: var(--light);">Frais de scolarité annuels</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">€0 - €4,000 (universités publiques)</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">€3,000 - €8,000</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td style="padding: 1.5rem; font-weight: 600; color: var(--light);">Coût de la vie mensuel</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">€700 - €1,200</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">€800 - €1,300</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td style="padding: 1.5rem; font-weight: 600; color: var(--light);">Travail étudiant</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">20h/semaine pendant les cours</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">20h/semaine pendant les cours</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td style="padding: 1.5rem; font-weight: 600; color: var(--light);">Durée moyenne des études</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">3 ans (Bachelor) + 2 ans (Master)</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">1-2 ans (Programmes intensifs)</td>
+          </tr>
+          <tr>
+            <td style="padding: 1.5rem; font-weight: 600; color: var(--light);">Avantages clés</td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">
+              <ul style="text-align: left; padding-left: 1.5rem; margin: 0;">
+                <li style="margin-bottom: 0.5rem;">Universités historiques prestigieuses</li>
+                <li style="margin-bottom: 0.5rem;">Frais très abordables</li>
+                <li>Culture riche et diversifiée</li>
+              </ul>
+            </td>
+            <td style="padding: 1.5rem; text-align: center; opacity: 0.9;">
+              <ul style="text-align: left; padding-left: 1.5rem; margin: 0;">
+                <li style="margin-bottom: 0.5rem;">Environnement 100% anglophone</li>
+                <li style="margin-bottom: 0.5rem;">Climat méditerranéen</li>
+                <li>Communauté internationale</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="contact.html" class="main-btn" style="display: inline-flex;">
+        <span>Besoin d'aide pour choisir ?</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+	  
+	  <style>
+  .comparison-table td, 
+  .comparison-table th {
+    color: var(--light) !important;
+    opacity: 1 !important;
+  }
+  
+  .comparison-table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+  }
+  
+  .comparison-table ul li {
+    color: var(--light) !important;
+  }
+</style>
+	  
+    </div>
+  </section>
+
+<section id="france" class="destination-section" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); padding: var(--section-spacing) 2rem; position: relative; overflow: hidden; color: var(--light);">
+    <div class="destination-container" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+      <div class="destination-image" style="position: relative; height: 500px;">
+        <img src="images/France.png" alt="Étudier en France" style="width: 100%; height: 100%; object-fit: cover; clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);">
+      </div>
+  
+      <div class="destination-content">
+        <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+          <img src="https://flagcdn.com/w40/fr.png" alt="Drapeau France" style="width: 40px; height: 30px; margin-right: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+          <h2 style="font-size: 2.5rem; color: var(--light);">France</h2>
+        </div>
+        
+        <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">La France est un leader mondial de l’éducation supérieure, accueillant chaque année des milliers d’étudiants internationaux dans ses grandes écoles et universités renommées.</p>
+        
+        <div class="destination-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+            <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">300+</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Établissements publics et privés</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+            <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">€170-3800</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Frais annuels selon le cursus</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+            <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">90%</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Taux de visa étudiant délivré</p>
+          </div>
+          <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+            <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">20h/sem</h3>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Travail autorisé durant les études</p>
+          </div>
+        </div>
+  
+        <a href="contact.html" class="main-btn">
+          <span>Postuler pour la France</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="allemagne" class="destination-section" style="background: var(--primary-light); padding: var(--section-spacing) 2rem; position: relative; overflow: hidden; color: var(--light);">
+  <div class="destination-container" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+    <div class="destination-content">
+      <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+        <img src="https://flagcdn.com/w40/de.png" alt="Drapeau Allemagne" style="width: 40px; height: 30px; margin-right: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+        <h2 style="font-size: 2.5rem; color: var(--light);">Allemagne</h2>
+      </div>
+      
+      <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">L’Allemagne est réputée pour son enseignement supérieur gratuit ou à faible coût, sa qualité académique et ses possibilités de travail post-études dans l’UE.</p>
+      
+      <div class="destination-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+        <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+          <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">€0-500</h3>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Frais universitaires semestriels</p>
+        </div>
+        <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+          <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">400+</h3>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Universités et Fachhochschulen</p>
+        </div>
+        <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+          <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">20h/sem</h3>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Emploi autorisé durant les cours</p>
+        </div>
+        <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+          <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">94%</h3>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Taux de visa étudiant accepté</p>
+        </div>
+      </div>
+
+      <a href="contact.html" class="main-btn">
+        <span>Postuler pour l'Allemagne</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    
+    <div class="destination-image" style="position: relative; height: 500px;">
+      <img src="images/Germany.avif" alt="Étudier en Allemagne" style="width: 100%; height: 100%; object-fit: cover; clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);">
+    </div>
+  </div>
+</section>
+
+
+<section id="canada" class="destination-section" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); padding: var(--section-spacing) 2rem; position: relative; overflow: hidden; color: var(--light);">
+  <div class="destination-container" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+    <div class="destination-image" style="position: relative; height: 500px;">
+      <img src="images/Canada.jpeg" alt="Étudier au Canada" style="width: 100%; height: 100%; object-fit: cover; clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);">
+    </div>
+
+    <div class="destination-content">
+      <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+        <img src="https://flagcdn.com/w40/ca.png" alt="Drapeau Canada" style="width: 40px; height: 30px; margin-right: 1rem; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+        <h2 style="font-size: 2.5rem; color: var(--light);">Canada</h2>
+      </div>
+      
+      <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">Le Canada est l'une des destinations les plus prisées pour sa qualité de vie, son accueil des étudiants étrangers et ses opportunités d'immigration après les études.</p>
+      
+      <div class="destination-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+        <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+          <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">€10,000-20,000</h3>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Frais de scolarité annuels</p>
+        </div>
+        <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+          <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">Permis PGWP</h3>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Permis de travail post-diplôme</p>
+        </div>
+        <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--accent);">
+          <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem;">20h/sem</h3>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Travail pendant les études</p>
+        </div>
+        <div class="stat-item" style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-left: 3px solid var(--secondary);">
+          <h3 style="font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem;">95%</h3>
+          <p style="font-size: 0.9rem; opacity: 0.8;">Taux de visa délivré</p>
+        </div>
+      </div>
+
+      <a href="contact.html" class="main-btn">
+        <span>Postuler pour le Canada</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Section Témoignages -->
+<section class="services" style="background: var(--dark);">
+  <div class="section-title" style="color: var(--light);">
+    <h2 style="color: var(--light);">Ils Ont Réalisé Leur Rêve</h2>
+    <p style="color: var(--light); opacity: 0.9;">Découvrez les expériences de nos étudiants en Italie et à Malte</p>
+  </div>
+    
+    <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+      <div class="testimonial-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255, 94, 91, 0.1); padding: 2rem; position: relative; overflow: hidden;">
+        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+          <img src="images/TNN.jpg" alt="Amira" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 1rem; border: 2px solid var(--accent);">
+          <div>
+            <h4 style="color: var(--light); margin-bottom: 0.2rem;">Amira B.</h4>
+            <p style="font-size: 0.9rem; opacity: 0.7;">Étudiante en Architecture - Milan</p>
+          </div>
+        </div>
+        <p style="margin-bottom: 1.5rem; font-style: italic; opacity: 0.9;">"VisaHorizon m'a guidée pas à pas dans mon admission au Politecnico di Milano. Leur expertise sur les bourses italiennes a été déterminante pour mon projet."</p>
+        <div style="color: var(--accent);">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+      
+      <div class="testimonial-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255, 94, 91, 0.1); padding: 2rem; position: relative; overflow: hidden;">
+        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Mehdi" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 1rem; border: 2px solid var(--secondary);">
+          <div>
+            <h4 style="color: var(--light); margin-bottom: 0.2rem;">Mehdi S.</h4>
+            <p style="font-size: 0.9rem; opacity: 0.7;">Étudiant en Informatique - Malte</p>
+          </div>
+        </div>
+        <p style="margin-bottom: 1.5rem; font-style: italic; opacity: 0.9;">"Grâce à VisaHorizon, j'ai pu intégrer un programme en cybersécurité à Malte sans tracas. Leur aide pour le logement et l'ouverture bancaire a été précieuse."</p>
+        <div style="color: var(--accent);">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+      </div>
+      
+      <div class="testimonial-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255, 94, 91, 0.1); padding: 2rem; position: relative; overflow: hidden;">
+        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+          <img src="images/TN.jpg" alt="Sarah" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 1rem; border: 2px solid var(--accent);">
+          <div>
+            <h4 style="color: var(--light); margin-bottom: 0.2rem;">Sarah L.</h4>
+            <p style="font-size: 0.9rem; opacity: 0.7;">Étudiante en MBA - Rome</p>
+          </div>
+        </div>
+        <p style="margin-bottom: 1.5rem; font-style: italic; opacity: 0.9;">"Le processus de visa était complexe, mais mon conseiller VisaHorizon a tout simplifié. Aujourd'hui, je poursuis mon rêve dans une université romaine prestigieuse."</p>
+        <div style="color: var(--accent);">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="testimonials.html" class="main-btn" style="display: inline-flex; background: transparent; border-color: var(--secondary);">
+        <span>Voir plus de témoignages</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+	  
+	  <style>
+  .testimonial-card p {
+    color: var(--light) !important;
+    opacity: 1 !important;
+  }
+  
+  .testimonial-card h4 {
+    color: var(--light) !important;
+  }
+  
+  .testimonial-card p:last-child {
+    opacity: 0.7 !important;
+  }
+</style>
+	  
+    </div>
+  </section>
+  
+  <!-- Section CTA -->
+<section class="contact" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); padding: 5rem 2rem;">
+  <div class="contact-container" style="max-width: 600px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center;">
+    <h2 class="contact-title" style="color: var(--light); margin-bottom: 1.5rem; font-size: 2rem;">Prêt à Commencer Votre Aventure ?</h2>
+    <p class="contact-text" style="color: var(--light); opacity: 0.9; margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.6;">
+      Notre équipe d'experts est à votre disposition pour vous guider vers la destination qui correspond à votre profil et vos ambitions.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; max-width: 300px;">
+      <a href="contact.html" class="main-btn" style="background: var(--accent); border-color: var(--accent); color: var(--light); padding: 1rem; width: 100%; text-align: center;">
+        <span>Demander un conseil</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="tel:+21693312388" class="main-btn" style="background: transparent; border-color: var(--light); color: var(--light); padding: 1rem; width: 100%; text-align: center;">
+        <span>Appeler un expert</span>
+        <i class="fas fa-phone-alt"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animation pour les boutons */
+  .main-btn {
+    transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .main-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  .main-btn i {
+    transition: transform 0.3s ease;
+  }
+  .main-btn:hover i {
+    transform: translateX(3px);
+  }
+</style>
+
+   
+  <div id="footer-placeholder"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // Une fois le HTML du footer injecté, on peut exécuter le JS lié à la newsletter
+      const form = document.getElementById('newsletterForm');
+      if (form) {
+        const message = document.getElementById('newsletterMessage');
+        message.style.display = 'none';
+
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          message.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            message.style.display = 'none';
+          }, 5000);
+        });
+      }
+    });
+</script>
+  <script src="script.js"></script>
+
+  <style>
+    /* Responsive pour mobile - Sections Italie, Malte et Comparaison */
+    @media (max-width: 768px) {
+      /* Section Italie */
+      #italie .destination-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      
+      #italie .destination-image {
+        height: 300px !important;
+        order: -1 !important;
+      }
+      
+      /* Section Malte */
+      #malte .destination-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      
+      #malte .destination-image {
+        height: 300px !important;
+      }
+      
+      /* Section Comparaison */
+      .comparison-table {
+        overflow-x: auto !important;
+      }
+      
+      .comparison-table table {
+        min-width: 600px !important;
+      }
+      
+      /* Universités partenaires */
+      .university-gallery {
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        padding-bottom: 1rem !important;
+        flex-wrap: nowrap !important;
+      }
+      
+      .university-card {
+        flex: 0 0 220px !important;
+        margin-right: 1rem !important;
+      }
+      
+      /* Programmes populaires */
+      .programs-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      /* Statistiques */
+      .destination-stats {
+        grid-template-columns: 1fr !important;
+      }
+      
+      /* Boutons */
+      .hero-text .main-btn {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+
+</body>
+</html>
