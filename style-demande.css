@@ -556,7 +556,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 65vh; /* Ajustez cette valeur selon vos besoins */
+    min-height: 75vh; /* Ajustez cette valeur selon vos besoins */
     padding-top: 2rem; /* Réduisez le padding-top initial */
     padding-bottom: 3rem;
   }
