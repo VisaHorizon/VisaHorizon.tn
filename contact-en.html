@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisaHorizon | Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-contact.css">
+  <style>
+    /* Contact page specific styles */
+    .contact-hero {
+      padding: 8rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .contact-mode-selector {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+/* Style for mode buttons - Hover & Active States */
+.mode-btn {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--text);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Hover Effect (Turns Orange) */
+.mode-btn:hover {
+  background: var(--accent) !important;
+  color: var(--light) !important;
+  border-color: var(--accent) !important;
+}
+
+/* Active/Clicked State (Stays Orange) */
+.mode-btn.active {
+  background: var(--accent);
+  color: var(--light);
+  border-color: var(--accent);
+}
+    
+    .animated-blob {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      filter: blur(40px);
+      opacity: 0.2;
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .smart-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .feature-card {
+      background: rgba(0,0,0,0.03);
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .smart-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    
+    .option-card {
+      background: rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .option-card:hover {
+      border-color: var(--accent);
+    }
+    
+    .option-card i {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .form-step {
+      display: none;
+    }
+    
+    .form-step.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    
+    /* Chat AI */
+    #deepseek-chat-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      background: var(--light);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      z-index: 10000;
+      display: none;
+      font-family: 'Archivo', sans-serif;
+    }
+    
+    #deepseek-chat-header {
+      background: var(--accent);
+      color: white;
+      padding: 12px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    
+    #deepseek-chat-messages {
+      height: 300px;
+      overflow-y: auto;
+      padding: 15px;
+      background: var(--light);
+    }
+    
+    #deepseek-chat-input {
+      display: flex;
+      padding: 10px;
+      background: var(--primary);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    #deepseek-user-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid var(--accent);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--dark);
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+    
+    .deepseek-message {
+      background: var(--primary);
+      color: var(--text);
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      max-width: 85%;
+      align-self: flex-start;
+    }
+    
+    .user-message {
+      background: var(--accent);
+      color: white;
+      margin-left: auto;
+    }
+    
+    .form-alert {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 4px;
+      display: none;
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    .form-alert.success {
+      display: block;
+      background-color: rgba(0, 193, 179, 0.2);
+      border: 1px solid var(--secondary);
+      color: var(--secondary);
+    }
+    
+    .form-alert.error {
+      display: block;
+      background-color: rgba(255, 94, 91, 0.2);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-mode-selector {
+        flex-direction: column;
+      }
+      
+      .smart-options {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="Logo.png" alt="VisaHorizon Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-main"></span>
+          <span class="logo-tagline">Beyond Borders</span>
+        </div>
+      </a>
+	     <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+      <nav class="nav-links">
+        <a href="index-en.html" class="nav-link">Home</a>
+        <a href="services-en.html" class="nav-link">Services</a>
+        <a href="destinations-en.html" class="nav-link">Destinations</a>
+        <a href="process-en.html" class="nav-link">Process</a>
+        <a href="testimonials-en.html" class="nav-link">Testimonials</a>
+        <a href="contact-en.html" class="contact-btn">Contact</a>
+        <div class="language-selector">
+          <button class="language-btn">
+            <img src="https://flagcdn.com/w20/gb.png" alt="English" class="language-flag">
+            <span>EN</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="language-dropdown">
+            <a href="contact-en.html" class="language-option">
+              <img src="https://flagcdn.com/w20/gb.png" alt="English" class="language-flag">
+              <span>EN</span>
+            </a>
+            <a href="contact.html" class="language-option">
+              <img src="https://flagcdn.com/w20/fr.png" alt="Français" class="language-flag">
+              <span>FR</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Smart <span class="gradient-text">Contact</span></h1>
+        <p class="hero-subtitle">Our intelligent contact system adapts the form to your needs in real-time</p>
+        
+<div class="contact-mode-selector">
+  <button class="mode-btn" data-mode="visa" onclick="window.location.href='demande-en.html?mode=visa'">
+    <i class="fas fa-envelope"></i> Standard Message
+  </button>
+  <button class="mode-btn" data-mode="urgence" onclick="window.location.href='demande-en.html?mode=urgence'">
+    <i class="fas fa-bolt"></i> Urgent Request
+  </button>
+  <button class="mode-btn" data-mode="rdv" onclick="window.location.href='demande-en.html?mode=rdv'">
+    <i class="fas fa-calendar-check"></i> Book Appointment
+  </button>
+</div>
+      </div>
+      <div class="hero-image">
+        <div class="animated-blob"></div>
+        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart contact" class="hero-img">
+        <div class="hero-img-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Form Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2 class="contact-title"><span class="typed-text"></span></h2>
+        <p class="contact-text" id="dynamic-text">Tell us how we can help you and our system will automatically adapt the required fields.</p>
+        
+        <div class="smart-features">
+          <div class="feature-card ai-trigger">
+            <div class="feature-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h4>AI Assistance</h4>
+            <p>Our AI analyzes your request for an optimal response</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h4>Quick Response</h4>
+            <p>95% of requests receive a response within 1 hour</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrapper">
+        <form id="smartForm" action="https://formspree.io/f/mqaqkonw" method="POST" class="contact-form">
+          <div class="form-step active" id="step1">
+            <div class="form-group">
+              <label class="form-label">What is the purpose of your request?</label>
+              <div class="smart-options">
+                <div class="option-card" data-option="visa">
+                  <i class="fas fa-passport"></i>
+                  <span>Visa Application</span>
+                </div>
+                <div class="option-card" data-option="universite">
+                  <i class="fas fa-university"></i>
+                  <span>University Admission</span>
+                </div>
+                <div class="option-card" data-option="autre">
+                  <i class="fas fa-question"></i>
+                  <span>Other Request</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="next-btn main-btn">Next <i class="fas fa-arrow-right"></i></button>
+          </div>
+          
+          <div class="form-step" id="step2">
+            <div id="dynamic-fields"></div>
+            <div class="form-actions">
+              <button type="button" class="back-btn contact-btn">Back</button>
+              <button type="submit" class="submit-btn">Send <i class="fas fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="Logo.png" alt="VisaHorizon" class="footer-logo-img">
+        <p class="footer-text">Student visa experts for Italy, Malta and Europe. We turn academic dreams into reality.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/VisaHorizon.tn/" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span class="social-tooltip">Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/visahorizon.tn/" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+            <span class="social-tooltip">Instagram</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aymen-lamiri-9baaa926a/" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+            <span class="social-tooltip">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Destinations</h3>
+        <ul class="footer-nav">
+          <li><a href="destinations.html#italie">Italy</a></li>
+          <li><a href="destinations.html#malte">Malta</a></li>
+          <li><a href="destinations.html#france">France</a></li>
+          <li><a href="destinations.html#allemagne">Germany</a></li>
+          <li><a href="destinations.html#canada">Canada</a></li>
+        </ul>
+      </div>
+      
+<div class="footer-newsletter">
+  <h3>Newsletter</h3>
+  <p>Subscribe to receive our exclusive tips and offers.</p>
+  <form id="newsletterForm" class="newsletter-form">
+    <input type="email" placeholder="Your email" class="newsletter-input" required>
+    <button type="submit" class="newsletter-btn">Subscribe</button>
+  </form>
+  <div id="newsletterMessage" class="newsletter-message" style="display: none;">
+    Sorry, the newsletter is temporarily disabled. Please check back soon!
+  </div>
+</div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 VisaHorizon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Chat AI Container -->
+  <div id="deepseek-chat-container">
+    <div id="deepseek-chat-header">
+      <span>DeepSeek Assistant</span>
+      <button id="close-deepseek-chat"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="deepseek-chat-messages">
+      <div class="deepseek-message">Hello! I'm Aymen Lamiri, how can I help you today?</div>
+    </div>
+    <div id="deepseek-chat-input">
+      <input type="text" id="deepseek-user-input" placeholder="Ask your question...">
+      <button id="deepseek-send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script>
+   // Typing effect
+const typedText = document.querySelector('.typed-text');
+const texts = ["Contact us intelligently", "Get quick answers", "Adaptive system"];
+let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+  const currentText = texts[index];
+  
+  if (isDeleting) {
+    typedText.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typedText.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+  }
+  
+  if (!isDeleting && charIndex === currentText.length) {
+    isDeleting = true;
+    setTimeout(type, 2000);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    index = (index + 1) % texts.length;
+    setTimeout(type, 500);
+  } else {
+    setTimeout(type, isDeleting ? 50 : 100);
+  }
+}
+
+// Initialize typing effect
+setTimeout(type, 1000);
+
+// Smart form functionality
+const optionCards = document.querySelectorAll('.option-card');
+const nextBtn = document.querySelector('.next-btn');
+const backBtn = document.querySelector('.back-btn');
+const step1 = document.getElementById('step1');
+const step2 = document.getElementById('step2');
+const dynamicFields = document.getElementById('dynamic-fields');
+const dynamicText = document.getElementById('dynamic-text');
+const modeButtons = document.querySelectorAll('.mode-btn');
+
+let selectedOption = null;
+let selectedMode = 'standard';
+
+// Option selection
+optionCards.forEach(card => {
+  card.addEventListener('click', () => {
+    optionCards.forEach(c => c.style.borderColor = 'rgba(0,0,0,0.1)');
+    card.style.borderColor = 'var(--accent)';
+    selectedOption = card.dataset.option;
+  });
+});
+
+// Next button
+nextBtn.addEventListener('click', () => {
+  if (!selectedOption) return alert('Please select an option');
+  
+  step1.classList.remove('active');
+  step2.classList.add('active');
+  
+  // Generate fields based on selection
+  let fieldsHTML = '';
+  
+  // Common fields
+  fieldsHTML += `
+    <div class="form-group">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" id="name" name="name" class="form-input" required>
+    </div>
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" name="email" class="form-input" required>
+    </div>
+  `;
+  
+  // Specific fields
+  switch(selectedOption) {
+    case 'visa':
+      fieldsHTML += `
+        <div class="form-group">
+          <label for="visa-type" class="form-label">Visa Type</label>
+          <select id="visa-type" name="visa_type" class="form-input" required>
+            <option value="">Select...</option>
+            <option value="etudiant">Student Visa</option>
+            <option value="touriste">Tourist Visa</option>
+            <option value="travail">Work Visa</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="country" class="form-label">Destination Country</label>
+          <input type="text" id="country" name="country" class="form-input" required>
+        </div>
+      `;
+      break;
+      
+    case 'universite':
+      fieldsHTML += `
+        <div class="form-group">
+          <label for="niveau" class="form-label">Education Level</label>
+          <select id="niveau" name="education_level" class="form-input" required>
+            <option value="">Select...</option>
+            <option value="licence">Bachelor's</option>
+            <option value="master">Master's</option>
+            <option value="doctorat">PhD</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="domaine" class="form-label">Field of Study</label>
+          <input type="text" id="domaine" name="study_field" class="form-input" required>
+        </div>
+      `;
+      break;
+      
+    default:
+      fieldsHTML += `
+        <div class="form-group">
+          <label for="message" class="form-label">Your Message</label>
+          <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
+        </div>
+      `;
+  }
+  
+  // Add urgency field if needed
+  if (selectedMode === 'urgence') {
+    fieldsHTML += `
+      <div class="form-group">
+        <label for="urgence" class="form-label">Urgency Level</label>
+        <select id="urgence" name="urgency" class="form-input" required>
+          <option value="normal">Normal</option>
+          <option value="eleve">High</option>
+          <option value="critique">Critical</option>
+        </select>
+      </div>
+      <input type="hidden" name="_subject" value="[URGENT] Contact Request">
+    `;
+  }
+  
+  // Add calendar if appointment
+  if (selectedMode === 'rdv') {
+    fieldsHTML += `
+      <div class="form-group">
+        <label for="rdv-date" class="form-label">Preferred Date</label>
+        <input type="date" id="rdv-date" name="appointment_date" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="rdv-type" class="form-label">Appointment Type</label>
+        <select id="rdv-type" name="appointment_type" class="form-input" required>
+          <option value="video">Video Call</option>
+          <option value="bureau">In Office</option>
+        </select>
+      </div>
+      <input type="hidden" name="_subject" value="Appointment Request">
+    `;
+  }
+  
+  dynamicFields.innerHTML = fieldsHTML;
+});
+
+// Back button
+backBtn.addEventListener('click', () => {
+  step2.classList.remove('active');
+  step1.classList.add('active');
+});
+
+// Form submission
+document.getElementById('smartForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.innerHTML;
+  
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Thank you! Your message has been sent successfully.');
+      form.reset();
+      step2.classList.remove('active');
+      step1.classList.add('active');
+      optionCards.forEach(c => c.style.borderColor = 'rgba(0,0,0,0.1)');
+    } else {
+      throw new Error('Network error');
+    }
+  })
+  .catch(error => {
+    alert('Error sending message: ' + error.message);
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalText;
+  });
+});
+
+// Chat AI functionality
+let conversationHistory = [];
+
+if (localStorage.getItem('chatHistory')) {
+  conversationHistory = JSON.parse(localStorage.getItem('chatHistory'));
+} else {
+  conversationHistory = [{
+    role: "system",
+    content: "You are an expert student visa assistant. Respond in English in a concise and professional manner."
+  }];
+}
+
+// UI Management
+document.querySelector('.ai-trigger')?.addEventListener('click', toggleChat);
+document.getElementById('close-deepseek-chat')?.addEventListener('click', toggleChat);
+document.getElementById('deepseek-send-btn')?.addEventListener('click', sendMessage);
+document.getElementById('deepseek-user-input')?.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') sendMessage();
+});
+
+function toggleChat() {
+  const chat = document.getElementById('deepseek-chat-container');
+  chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
+}
+
+async function sendMessage() {
+  const input = document.getElementById('deepseek-user-input');
+  const message = input.value.trim();
+  if (!message) return;
+  
+  const chatBox = document.getElementById('deepseek-chat-messages');
+  
+  // Add user message
+  conversationHistory.push({ role: "user", content: message });
+  displayMessage(message, 'user');
+  input.value = '';
+  
+  // Show typing indicator
+  const typingIndicator = document.createElement('div');
+  typingIndicator.className = 'deepseek-message typing';
+  typingIndicator.innerHTML = `<i class="fas fa-circle-notch fa-spin"></i> Assistant is typing...`;
+  chatBox.appendChild(typingIndicator);
+  
+  try {
+    const response = await simulateAIResponse(message);
+    
+    chatBox.removeChild(typingIndicator);
+    displayMessage(response, 'assistant');
+    conversationHistory.push({ role: "assistant", content: response });
+    localStorage.setItem('chatHistory', JSON.stringify(conversationHistory));
+  } catch (error) {
+    console.error("Error:", error);
+    chatBox.removeChild(typingIndicator);
+    displayMessage("Sorry, I can't respond at the moment. Please try again later.", 'error');
+  }
+}
+
+// Simulated response
+async function simulateAIResponse(message) {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  
+  const sampleResponses = [
+    "For student visas in Italy, you will need...",
+    "The process for Malta typically includes...",
+    "Could you clarify your request regarding: " + message + "?",
+    "Our visa experts can help with this question. Would you like to schedule a call?"
+  ];
+  
+  return sampleResponses[Math.floor(Math.random() * sampleResponses.length)];
+}
+
+function displayMessage(content, type = 'assistant') {
+  const chatBox = document.getElementById('deepseek-chat-messages');
+  const msg = document.createElement('div');
+  msg.className = type === 'user' ? 'user-message' : 'deepseek-message';
+  msg.textContent = content;
+  chatBox.appendChild(msg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// Newsletter Form Handling
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('newsletterMessage').style.display = 'block';
+  this.reset();
+});
+
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const message = document.getElementById('newsletterMessage');
+  message.style.display = 'block';
+  this.reset();
+  
+  // Disparaît après 5 secondes
+  setTimeout(() => {
+    message.style.display = 'none';
+  }, 3000);
+});
+
+// Scroll animation
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+  
+  // Animate elements
+  const elements = document.querySelectorAll('.service-card, .contact-item, .contact-form');
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.style.animation = 'fadeIn 0.8s forwards';
+    }
+  });
+});
+// Mobile Menu - Version garantie
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navMenu = document.querySelector('.nav-links');
+
+  menuBtn.addEventListener('click', function() {
+    // Basculer l'état
+    const isOpen = navMenu.classList.contains('active');
+    
+    // Animation du bouton
+    this.classList.toggle('active');
+    
+    // Ouvrir/fermer le menu
+    navMenu.classList.toggle('active');
+    
+    // Bloquer le défilement
+    document.body.classList.toggle('no-scroll');
+    
+    // Mise à jour ARIA
+    this.setAttribute('aria-expanded', !isOpen);
+  });
+
+  // Fermer le menu quand on clique sur un lien
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuBtn.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
+  </script>
+</body>
+</html>
+	
